@@ -1,0 +1,21 @@
+/*
+ Given an array representing heights of buildings. count number of buildings facing the sunset from left to right. 
+*/
+public static int BuldingsFacingSunset2(int[] a)
+{
+    // first building always sees sunlight
+    int count = 1;
+    int curr_max = a[0];
+    for (int i = 1; i < a.Length; i++)
+    {
+        // If curr_element is maximum, 
+        // update maximum and increment count 
+        if (a[i] > curr_max)
+        {
+            count++;
+            curr_max = a[i];
+        }
+    }
+
+    return count;
+}
